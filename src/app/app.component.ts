@@ -9,6 +9,12 @@ export class AppComponent {
   nome = 'Thiago';
 
   adicionar(nome: string) {
-    this.nome = nome;
+    console.log(`Adicionando ${this.nome}`);
+    const numero = Math.round(Math.random() * 100);
+    this.nome = 'João ' + numero;
+  }
+
+  alterarNome(event) {
+    this.nome = event.target.value;
   }
 }
