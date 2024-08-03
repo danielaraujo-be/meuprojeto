@@ -7,10 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   nome = 'Thiago';
+  adicionado = false;
 
   adicionar(nome: string) {
     console.log(`Adicionando ${this.nome}`);
-    const numero = Math.round(Math.random() * 100);
-    this.nome = 'João ' + numero;
+    this.adicionado = true;
   }
 }
