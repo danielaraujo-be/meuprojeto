@@ -19,4 +19,8 @@ export class FuncionarioCardComponent {
       backgroundColor: this.funcionario.id % 2 == 0 ? 'lightblue' : 'lightgreen'
     };
   }
+
+  isAdmin() {
+    return this.funcionario.nome.startsWith('T');
+  }
 }
