@@ -1,19 +1,20 @@
 import { Directive, HostBinding, HostListener, Input } from '@angular/core';
 
 @Directive({
-  selector: '[appCampoColorido]'
+  selector: '[appCampoColorido]',
+  exportAs: 'campoColorido'
 })
 export class CampoColoridoDirective {
   @Input('appCampoColorido') cor = 'gray';
 
-  @HostBinding('style.backgroundColor') styleBackgroundColor: string;
+  @HostBinding('style.backgroundColor') corDeFundo: string;
 
-  @HostListener('focus') focus() {
-    this.styleBackgroundColor = this.cor;
+  @HostListener('focus') colorir() {
+    this.corDeFundo = this.cor;
   }
 
-  @HostListener('blur') blur() {
-    this.styleBackgroundColor = 'transparent';
+  @HostListener('blur') descolorir() {
+    this.corDeFundo = 'transparent';
   }
 
 }
